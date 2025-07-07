@@ -1,12 +1,12 @@
 class Solution {
-    public boolean isAnagram(String s, String t) {
-        char[] schar = s.toCharArray();
-        char[] tchar = t.toCharArray();
+    public int maxProfit(int[] prices) {
+        int min=Integer.MAX_VALUE;
+        int profit=0;
 
-        Arrays.sort(schar);
-        Arrays.sort(tchar);
-
-        return Arrays.equals(schar,tchar);
-        
+        for(int price:prices){
+            min=Math.min(price,min);
+            profit=Math.max(profit,price-min);
+        }
+        return profit;
     }
 }
